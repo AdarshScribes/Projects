@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    /* wrapper height would be the height of viewport */
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* this is used to preserve the 3D structure */
+    transform-style: preserve-3d;
+    /* used to define overlapping, which layer comes over which */
+    z-index: -1;
+}
+.background {
+    transform: translateZ(-40px) scale(5);
+}
+
+.foreground {
+    transform: translateZ(-20px) scale(3);
+}
+
+.background, .foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* to fit image in container */
+    object-fit: cover;
+    z-index: -1;
+}
+h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    letter-spacing: 4px;
+    font-size: 6rem;
+    text-shadow: 0 0 rgba(0, 0, 0, 0.3);
+}
+section {
+    background-color: rgba(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+.secheading {
+    font-size:5rem;
+    padding:0 10rem;
+}
+.text {
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.bg {
+    position: relative;
+    width: 100%;
+    /* to fix the image , rest everything will scroll above it */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.bg1 {
+    background-image: url(walking.jpg);
+}
+.bg2 {
+    background-image: url(bike.jpg);
+}
+
+.bg3 {
+    background-image: url(elephant.jpg);
+}
+.bg4 {
+    background-image: url(rope.jpg);
+}
+.bg5 {
+    background-image: url(river.jpg);
+}
+
+.desc {
+    position: absolute;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(-50%);
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.forms {
+    position: relative;
+    padding: 0 10rem;
+    margin: 5rem 0;
+    left: 20%;
+    font-size: larger;
+}
+
+h3:hover {
+    color: darkgreen;
+}
+h5 {
+    color: white;
+    font-style: italic;
+}
